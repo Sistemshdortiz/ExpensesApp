@@ -26,6 +26,9 @@ const ExpenseForm = () => {
         //     ...userInput,
         //     enteredTitle:event.target.value,
         // })
+        // setUserInput((prevState)=>{
+        //     return {...prevState,enteredTitle: event.target.value};
+        // })
     };
 
     
@@ -37,6 +40,14 @@ const ExpenseForm = () => {
         setEnteredDate(event.target.value);
     }
 
+    const expenseHandler =(event) => {
+        event.preventDefault();
+        const expenseData ={
+            title: enteredTitle,
+            amount: enteredAmount,
+            date: new Date(enteredDate)
+        }
+    }
 
     return (
         <form>
@@ -55,7 +66,7 @@ const ExpenseForm = () => {
                 </div>
             </div>
             <div className='new-expense__actions'>
-                <button type='submit'>Add Expense</button>
+                <button type='submit' onClick={expenseHandler}>Add Expense</button>
             </div>
         </form>
     );
