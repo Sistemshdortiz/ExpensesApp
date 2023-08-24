@@ -34,11 +34,15 @@ const App = () => {
   //   React.createElement(Expense, { items: expenses })
   // );
 
+  const addExpenseHandler = expense =>{
+    console.log('In App.js');
+    console.log(expense)
+  }
 
 
   return (
     <div>
-      <NewExpense />
+      <NewExpense onAddExpense={addExpenseHandler}/>
       <Expense items={expenses} />
     </div>
   );
