@@ -8,12 +8,13 @@ const Chart = props => {
     const totalMaximum = Math.max(...dataPointValues);
 
     return <div className="chart">
-        {props.dataPoints.map(dataPoint =>
+        {props.dataPoints.map((dataPoint) =>(
             <ChartBar
                 value={dataPoint.value}
-                maxvalue={totalMaximum}
+                maxValue={totalMaximum}
                 label={dataPoint.label}
-                key={dataPoint.label} />)}
+                key={dataPoint.label} />
+                ))}
     </div>
 };
 
